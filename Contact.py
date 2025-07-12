@@ -1,26 +1,24 @@
 import streamlit as st
 import pandas as pd
 
-# Buttons to open URLs, arranged horizontally
-col1, col2 = st.columns(2)
-with col1:
-    if st.button("Appsheet"):
-        st.components.v1.html("<script>window.open('https://www.appsheet.com/start/1e3ec32d-a687-4a57-af21-cc8524d2f421');</script>", height=0)
-with col2:
-    if st.button("Google Sheet"):
-        st.components.v1.html("<script>window.open('https://docs.google.com/spreadsheets/d/19ZHtmylVV4FkXgdePpJAJOjQSb45aiK2Mb6fsqjVjtU/edit?usp=sharing');</script>", height=0)
+# URL Buttons
+st.columns(2)[0].link_button("🌐 Appsheet", "https://www.appsheet.com/start/1e3ec32d-a687-4a57-af21-cc8524d2f421")
+st.columns(2)[1].link_button("🤖 Google Sheet", "https://docs.google.com/spreadsheets/d/19ZHtmylVV4FkXgdePpJAJOjQSb45aiK2Mb6fsqjVjtU/edit?usp=sharing")
 
-# Title of the app
-st.title("Contact Information")
+# Title
+st.title("📞 যোগাযোগের তথ্য")
 
-# Hardcoded contact details in a dictionary
-data = {
-    "নাম": ["অয়ন", "আসিফ", "অয়ন আম্মা", "আসিফ আম্মা", "মাসুদ", "হিমেল", "উল্লাস"],
-    "মোবাইল নাম্বার": ["01678-863041// +880 1996-716061", "01835-272538 // +8801533090060", "01720578534 // +880 1948-636595", "01301496460", "016-788-63651", "017-147-12194", "+880 1987-196753"]
-}
+# Contact info (easily editable)
+contacts = [
+    {"নাম": "অয়ন", "মোবাইল নাম্বার": "01678-863041 // +880 1996-716061"},
+    {"নাম": "আসিফ", "মোবাইল নাম্বার": "01835-272538 // +8801533090060"},
+    {"নাম": "অয়ন আম্মা", "মোবাইল নাম্বার": "01720578534 // +880 1948-636595"},
+    {"নাম": "আসিফ আম্মা", "মোবাইল নাম্বার": "01301496460"},
+    {"নাম": "মাসুদ", "মোবাইল নাম্বার": "016-788-63651"},
+    {"নাম": "হিমেল", "মোবাইল নাম্বার": "017-147-12194"},
+    {"নাম": "উল্লাস", "মোবাইল নাম্বার": "+880 1987-196753"},
+]
 
-# Convert dictionary to DataFrame
-contacts_df = pd.DataFrame(data)
-
-# Display the table
-st.dataframe(contacts_df)
+# Show contacts as table
+df = pd.DataFrame(contacts)
+st.dataframe(df, use_container_width=True)
