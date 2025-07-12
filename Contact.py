@@ -4,23 +4,19 @@ import pandas as pd
 # Buttons to open URLs, arranged horizontally
 col1, col2 = st.columns(2)
 with col1:
-    if st.button("Visit Website 1"):
-        st.write("Opening https://example.com")
-        js = "window.open('https://example.com')"
-        st.components.v1.html(f"<script>{js}</script>", height=0)
+    if st.button("Website 1"):
+        st.components.v1.html("<script>window.open('https://example.com');</script>", height=0)
 with col2:
-    if st.button("Visit Website 2"):
-        st.write("Opening https://x.ai")
-        js = "window.open('https://x.ai')"
-        st.components.v1.html(f"<script>{js}</script>", height=0)
+    if st.button("Website 2"):
+        st.components.v1.html("<script>window.open('https://x.ai');</script>", height=0)
 
 # Title of the app
 st.title("Contact Information")
 
 # Hardcoded contact details in a dictionary
 data = {
-    "নাম": ["অয়ন", "আসিফ", "অয়ন আম্মা", "আসিফ আম্মা","মাসুদ","হিমেল","উল্লাস"],
-    "মোবাইল নাম্বার": ["01678-863041// +880 1996-716061", "01835-272538 // +8801533090060", "01720578534 // +880 1948-636595", "01301496460","016-788-63651","017-147-12194","+880 1987-196753"]
+    "নাম": ["অয়ন", "আসিফ", "অয়ন আম্মা", "আসিফ আম্মা", "মাসুদ", "হিমেল", "উল্লাস"],
+    "মোবাইল নাম্বার": ["01678-863041// +880 1996-716061", "01835-272538 // +8801533090060", "01720578534 // +880 1948-636595", "01301496460", "016-788-63651", "017-147-12194", "+880 1987-196753"]
 }
 
 # Convert dictionary to DataFrame
