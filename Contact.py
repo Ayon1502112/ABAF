@@ -1,19 +1,21 @@
 import streamlit as st
 import pandas as pd
 
+# Buttons to open URLs, arranged horizontally
+col1, col2 = st.columns(2)
+with col1:
+    if st.button("Visit Website 1"):
+        st.write("Opening https://example.com")
+        js = "window.open('https://example.com')"
+        st.components.v1.html(f"<script>{js}</script>", height=0)
+with col2:
+    if st.button("Visit Website 2"):
+        st.write("Opening https://x.ai")
+        js = "window.open('https://x.ai')"
+        st.components.v1.html(f"<script>{js}</script>", height=0)
+
 # Title of the app
 st.title("Contact Information")
-
-# Buttons to open URLs
-if st.button("Visit Website 1"):
-    st.write("Opening https://example.com")
-    js = "window.open('https://example.com')"
-    st.components.v1.html(f"<script>{js}</script>", height=0)
-
-if st.button("Visit Website 2"):
-    st.write("Opening https://x.ai")
-    js = "window.open('https://x.ai')"
-    st.components.v1.html(f"<script>{js}</script>", height=0)
 
 # Hardcoded contact details in a dictionary
 data = {
