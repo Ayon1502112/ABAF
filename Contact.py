@@ -4,11 +4,11 @@ import pandas as pd
 # Buttons to open URLs, arranged horizontally
 col1, col2 = st.columns(2)
 with col1:
-    if st.button("Website 1"):
-        st.components.v1.html("<script>window.open('https://example.com');</script>", height=0)
+    if st.button("Appsheet"):
+        st.components.v1.html("<script>window.open('https://www.appsheet.com/start/1e3ec32d-a687-4a57-af21-cc8524d2f421');</script>", height=0)
 with col2:
-    if st.button("Website 2"):
-        st.components.v1.html("<script>window.open('https://x.ai');</script>", height=0)
+    if st.button("Google Sheet"):
+        st.components.v1.html("<script>window.open('https://docs.google.com/spreadsheets/d/19ZHtmylVV4FkXgdePpJAJOjQSb45aiK2Mb6fsqjVjtU/edit?usp=sharing');</script>", height=0)
 
 # Title of the app
 st.title("Contact Information")
